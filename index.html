@@ -24,10 +24,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
-    /* Grain overlay */
     body::before {
       content: '';
       position: fixed;
@@ -37,7 +36,6 @@
       z-index: 10;
     }
 
-    /* Glow blob */
     .blob {
       position: fixed;
       width: 600px;
@@ -61,12 +59,12 @@
       position: relative;
       z-index: 1;
       padding: 2rem;
+      width: 100%;
+      max-width: 900px;
     }
 
     .tag {
-      font-family: 'DM Sans', sans-serif;
       font-size: 0.75rem;
-      font-weight: 400;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--accent);
@@ -87,15 +85,11 @@
       animation: fadeUp 0.8s 0.15s ease both;
     }
 
-    h1 .hola {
-      display: block;
-      color: var(--text);
-    }
+    h1 .hola { display: block; color: var(--text); }
 
     h1 .brand {
       display: block;
       color: var(--accent);
-      -webkit-text-stroke: 0px;
       position: relative;
     }
 
@@ -121,9 +115,57 @@
       width: 60px;
       height: 2px;
       background: var(--accent);
-      margin: 2.5rem auto 0;
+      margin: 2.5rem auto;
       animation: expandLine 1s 0.6s ease both;
       transform-origin: center;
+    }
+
+    /* BOTÓN */
+    .btn-video {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--accent);
+      color: #0a0a0a;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      animation: fadeUp 0.8s 0.45s ease both;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 0 0 0 rgba(200,241,53,0.4);
+    }
+
+    .btn-video:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(200,241,53,0.3);
+    }
+
+    .btn-video svg { width: 18px; height: 18px; }
+
+    /* VIDEO WRAPPER */
+    .video-wrapper {
+      margin-top: 3rem;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(200,241,53,0.2);
+      box-shadow: 0 0 60px rgba(200,241,53,0.08);
+      display: none;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .video-wrapper.visible { display: block; }
+
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+      background: #000;
     }
 
     @keyframes expandLine {
@@ -147,6 +189,39 @@
     </h1>
     <p class="sub">Estamos construyendo algo increíble.</p>
     <div class="line"></div>
+
+    <button class="btn-video" onclick="toggleVideo()">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      Ver vídeo
+    </button>
+
+    <div class="video-wrapper" id="videoWrapper">
+      <video id="mainVideo" controls preload="metadata">
+        <source src="WhatsApp_Video_2026-05-30_at_14_02_39.mp4" type="video/mp4">
+        Tu navegador no soporta vídeo HTML5.
+      </video>
+    </div>
   </div>
+
+  <script>
+    function toggleVideo() {
+      const wrapper = document.getElementById('videoWrapper');
+      const video = document.getElementById('mainVideo');
+      const btn = document.querySelector('.btn-video');
+
+      if (wrapper.classList.contains('visible')) {
+        wrapper.classList.remove('visible');
+        video.pause();
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Ver vídeo`;
+      } else {
+        wrapper.classList.add('visible');
+        video.play();
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Ocultar vídeo`;
+        wrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  </script>
 </body>
 </html>
