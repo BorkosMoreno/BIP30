@@ -91,8 +91,9 @@ export default {
             </div>
             <div class="mb-3 p-2 rounded" style="background:rgba(255,255,255,.1);font-size:.83rem">
               <div class="fw-bold mb-1" style="color:#F9A825">Puntos del orden del día:</div>
-              <div class="mb-1">· <strong>Punto 5</strong>: Autoconsumo particular (vecinos interesados) · <em>requiere 1/3</em></div>
-              <div>· <strong>Punto 6</strong>: Zonas comunes (toda la comunidad) · <em>requiere 50%+1</em></div>
+              <div class="mb-1">· <strong>Punto 3</strong>: Informe garantía obra cubierta</div>
+              <div class="mb-1">· <strong>Punto 6</strong>: Autoconsumo particular (vecinos interesados) · <em>requiere 1/3</em></div>
+              <div>· <strong>Punto 7</strong>: Zonas comunes (toda la comunidad) · <em>requiere 50%+1</em></div>
             </div>
             <div class="d-grid gap-2">
               <router-link to="/contacto" class="btn btn-warning fw-bold btn-sm">

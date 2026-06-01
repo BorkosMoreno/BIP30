@@ -19,13 +19,28 @@ export default {
         <!-- Puntos del orden del día -->
         <div class="col-md-7">
           <div class="card-solar">
-            <h5 class="section-title"><i class="bi bi-list-ol"></i>Puntos del orden del día (solar)</h5>
+            <h5 class="section-title"><i class="bi bi-list-ol"></i>Puntos del orden del día relevantes</h5>
 
-            <!-- Punto 5 -->
+            <!-- Punto 3 -->
+            <div class="p-3 rounded-3 mb-3" style="background:linear-gradient(135deg,#FFF3E0,#FFE0B2)">
+              <div class="d-flex align-items-start gap-2">
+                <span class="fw-bold rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0"
+                      style="width:28px;height:28px;background:#E65100;font-size:.85rem">3</span>
+                <div>
+                  <div class="fw-bold" style="color:#E65100">Informe resultado trabajos y condiciones garantía en obra cubierta</div>
+                  <div style="font-size:.83rem;color:#555;margin-top:.3rem">Se debatirá el estado de la obra de impermeabilización y las condiciones de garantía. <strong>Punto clave</strong>: se exigirá la presentación del contrato completo con Equipo Impe y la respuesta al burofax enviado, para que todos los vecinos conozcan la situación real de la garantía antes de votar los puntos solares.</div>
+                  <div class="mt-2">
+                    <span class="badge-tag bg-warning text-dark">Relacionado con el proyecto solar</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Punto 6 -->
             <div class="p-3 rounded-3 mb-3" style="background:linear-gradient(135deg,#E3F2FD,#BBDEFB)">
               <div class="d-flex align-items-start gap-2">
                 <span class="fw-bold rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0"
-                      style="width:28px;height:28px;background:var(--solar-primary);font-size:.85rem">5</span>
+                      style="width:28px;height:28px;background:var(--solar-primary);font-size:.85rem">6</span>
                 <div>
                   <div class="fw-bold" style="color:var(--solar-primary)">Autoconsumo particular de viviendas</div>
                   <div style="font-size:.83rem;color:#555;margin-top:.3rem">Información sobre los proyectos para la instalación de sistemas fotovoltaicos destinados al <strong>autoconsumo particular</strong> de las viviendas que así lo deseen.</div>
@@ -39,11 +54,11 @@ export default {
               </div>
             </div>
 
-            <!-- Punto 6 -->
+            <!-- Punto 7 -->
             <div class="p-3 rounded-3" style="background:linear-gradient(135deg,#E8F5E9,#C8E6C9)">
               <div class="d-flex align-items-start gap-2">
                 <span class="fw-bold rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0"
-                      style="width:28px;height:28px;background:#2E7D32;font-size:.85rem">6</span>
+                      style="width:28px;height:28px;background:#2E7D32;font-size:.85rem">7</span>
                 <div>
                   <div class="fw-bold" style="color:#1B5E20">Paneles solares para zonas comunes</div>
                   <div style="font-size:.83rem;color:#555;margin-top:.3rem">Deliberación y <strong>acuerdos</strong> sobre la instalación de paneles para el suministro eléctrico de las <strong>zonas comunes</strong> del edificio (portales, ascensores, garaje, etc.).</div>

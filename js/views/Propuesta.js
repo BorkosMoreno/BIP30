@@ -9,12 +9,12 @@ export default {
         <button @click="tipo='vecinos'" class="btn btn-sm fw-bold"
           :class="tipo==='vecinos' ? 'btn-primary' : 'btn-outline-primary'">
           <i class="bi bi-person-fill me-1"></i>Para vecinos interesados
-          <span class="badge bg-warning text-dark ms-1">Punto 5 de la junta</span>
+          <span class="badge bg-warning text-dark ms-1">Punto 6 de la junta</span>
         </button>
         <button @click="tipo='comunes'" class="btn btn-sm fw-bold"
           :class="tipo==='comunes' ? 'btn-success' : 'btn-outline-success'">
           <i class="bi bi-building-fill me-1"></i>Zonas comunes del edificio
-          <span class="badge bg-success text-white ms-1">Punto 6 de la junta</span>
+          <span class="badge bg-success text-white ms-1">Punto 7 de la junta</span>
         </button>
       </div>
 

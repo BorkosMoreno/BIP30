@@ -5,7 +5,7 @@ export default {
       <router-link to="/" class="brand">
         <i class="bi bi-sun-fill icon-sun"></i>
         <span>Energía Solar</span>
-        <span class="community">· Comunidad Los Almendros</span>
+        <span class="community">· Indalecio Prieto 30, Madrid</span>
       </router-link>
       <div class="d-flex align-items-center gap-3">
         <span class="header-badge">
