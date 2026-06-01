@@ -86,6 +86,7 @@ export default {
           docs: [
             { icono: 'bi-file-earmark-pdf-fill', color: '#7B1FA2', nombre: 'Informe jurídico · Solar y garantía', desc: 'Informe legal sobre compatibilidad instalación solar con garantía', id: '1l_6l_lqalUnTQ_UhVDv_KZNk87-8uZyc' },
             { icono: 'bi-file-earmark-pdf-fill', color: '#7B1FA2', nombre: 'Contrato impermeabilización (2024)', desc: 'Equipo Impe · Obra cubiertas · Cláusula de garantía 10 años', id: '1nT7yPtz4AO7qQfAWILFjj2qWCVZVq-2Y' },
+            { icono: 'bi-file-earmark-pdf-fill', color: '#7B1FA2', nombre: 'Acta final de obra y recepción (feb 2025)', desc: 'Firmada por ambas partes · Equipo Impe + Comunidad · Inicio garantía 10 años', id: '1Mfbrb0ACGzG-82QAXrXnXDjsUVq9I7Ng' },
             { icono: 'bi-file-earmark-pdf-fill', color: '#7B1FA2', nombre: 'Burofax a Equipo Impe (may 2026)',   desc: 'Requerimiento formal de respuesta sobre compatibilidad solar', id: '14pyiw3bO8oxaRSwG7M8oTXCnAPjOsNKI' },
             { icono: 'bi-file-earmark-pdf-fill', color: '#7B1FA2', nombre: 'Correo a Equipo Impe (abr 2026)',    desc: 'Primera solicitud de asesoramiento técnico', id: '1RieWuueoD2OsXAIIeExdg_oBZEdSUxyL' },
             { icono: 'bi-file-earmark-pdf-fill', color: '#7B1FA2', nombre: 'Correo a Equipo Impe (may 2026)',    desc: 'Segunda comunicación antes del burofax', id: '1pf1AI_yONFS2YGeVbVVmonRPUw6ch8NY' },
