@@ -10,7 +10,7 @@ import AppFooter  from './components/AppFooter.js?v=4'
 import Inicio     from './views/Inicio.js?v=5'
 import Beneficios from './views/Beneficios.js'
 import Propuesta  from './views/Propuesta.js'
-import Documentos from './views/Documentos.js?v=4'
+import Documentos from './views/Documentos.js?v=7'
 import Contacto   from './views/Contacto.js?v=3'
 
 // ── Router ────────────────────────────────────
