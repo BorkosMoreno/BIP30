@@ -52,7 +52,7 @@ export default {
       <div class="card-solar mb-4">
         <h5 class="section-title"><i class="bi bi-play-circle-fill"></i>Vídeos informativos del proyecto</h5>
         <div class="row g-3">
-          <div v-for="v in videos" :key="v.src" class="col-md-6">
+          <div v-for="v in videos" :key="v.src" class="col-md-4">
             <div class="fw-semibold mb-2" style="font-size:.88rem;color:var(--solar-primary)">
               <i class="bi bi-play-fill me-1"></i>{{ v.titulo }}
             </div>
@@ -137,8 +137,9 @@ export default {
   data() {
     return {
       videos: [
-        { titulo: 'Descifrando la garantía',  src: 'media/descifrando_la_garantia.mp4',   desc: 'Análisis de la cláusula de garantía del contrato de impermeabilización y por qué el sistema de lastre no la invalida.' },
-        { titulo: 'Análisis técnico solar',   src: 'media/analisis-tecnico-solar.mp4',     desc: 'Detalle técnico de la instalación: potencia, rendimiento, inversores y sistema de lastre.' },
+        { titulo: 'Descifrando la garantía',            src: 'media/descifrando_la_garantia.mp4',           desc: 'Análisis de la cláusula de garantía del contrato de impermeabilización y por qué el sistema de lastre no la invalida.' },
+        { titulo: 'Garantía y placas solares (resumen)', src: 'media/garantia_y_placas_solares_espress.mp4', desc: 'Versión abreviada del análisis sobre la compatibilidad entre la instalación solar y la garantía de la cubierta.' },
+        { titulo: 'Proyecto Solar BIP30',               src: 'media/proyecto_solar_bip_30.mp4',             desc: 'Presentación general del proyecto de autoconsumo fotovoltaico para la Comunidad Bulevar Indalecio Prieto 30.' },
       ],
       pasos: [
         { icono: 'bi bi-check-circle-fill text-success', texto: 'Consulta vecinal realizada: 50 a favor de 79 consultados' },

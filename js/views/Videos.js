@@ -28,6 +28,11 @@ export default {
     return {
       videos: [
         {
+          src:    'proyecto_solar_bip_30.mp4',
+          titulo: 'Proyecto Solar BIP30',
+          desc:   'Presentación general del proyecto de autoconsumo fotovoltaico para la Comunidad Bulevar Indalecio Prieto 30.',
+        },
+        {
           src:    'descifrando_la_garantia.mp4',
           titulo: 'Descifrando la garantía',
           desc:   'Análisis detallado de la cláusula de garantía del contrato de impermeabilización y por qué la instalación solar mediante sistema de lastre no la invalida.',

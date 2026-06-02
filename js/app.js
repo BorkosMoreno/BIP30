@@ -5,12 +5,12 @@ import AppHeader  from './components/AppHeader.js?v=3'
 import AppSidebar from './components/AppSidebar.js?v=4'
 import AppFooter  from './components/AppFooter.js?v=4'
 
-import Inicio     from './views/Inicio.js?v=7'
+import Inicio     from './views/Inicio.js?v=8'
 import Beneficios from './views/Beneficios.js'
 import Propuesta  from './views/Propuesta.js'
 import Documentos from './views/Documentos.js?v=7'
 import Contacto   from './views/Contacto.js?v=3'
-import Videos     from './views/Videos.js'
+import Videos     from './views/Videos.js?v=2'
 
 // ── Router ────────────────────────────────────
 const router = createRouter({
