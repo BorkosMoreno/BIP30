@@ -150,6 +150,7 @@ body {
 }
 
 .app-footer a { color: var(--solar-secondary); text-decoration: none; }
+.app-footer span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 
 /* ── Tarjetas ─────────────────────────────────── */
 .card-solar {

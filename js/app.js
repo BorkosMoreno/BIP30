@@ -5,7 +5,7 @@ const v = '?v=2'
 
 import AppHeader  from './components/AppHeader.js?v=3'
 import AppSidebar from './components/AppSidebar.js?v=3'
-import AppFooter  from './components/AppFooter.js?v=2'
+import AppFooter  from './components/AppFooter.js?v=4'
 
 import Inicio     from './views/Inicio.js?v=5'
 import Beneficios from './views/Beneficios.js'
