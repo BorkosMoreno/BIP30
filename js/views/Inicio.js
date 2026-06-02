@@ -52,7 +52,7 @@ export default {
       <div class="card-solar mb-4">
         <h5 class="section-title"><i class="bi bi-play-circle-fill"></i>Vídeos informativos del proyecto</h5>
         <div class="row g-3">
-          <div v-for="v in videos" :key="v.src" class="col-md-4">
+          <div v-for="v in videos" :key="v.src" class="col-md-6">
             <div class="fw-semibold mb-2" style="font-size:.88rem;color:var(--solar-primary)">
               <i class="bi bi-play-fill me-1"></i>{{ v.titulo }}
             </div>
@@ -63,6 +63,11 @@ export default {
             </div>
             <p class="text-muted mt-2 mb-0" style="font-size:.78rem">{{ v.desc }}</p>
           </div>
+        </div>
+        <div class="text-end mt-3">
+          <router-link to="/videos" style="font-size:.83rem;color:var(--solar-primary);text-decoration:none">
+            <i class="bi bi-collection-play me-1"></i>Ver todos los vídeos →
+          </router-link>
         </div>
       </div>
 
@@ -132,9 +137,8 @@ export default {
   data() {
     return {
       videos: [
-        { titulo: 'Análisis jurídico y garantías',  src: 'media/analisis-juridico-garantias.mp4', desc: 'Aspectos legales de la instalación y su compatibilidad con la garantía de impermeabilización.' },
-        { titulo: 'Paneles solares',                src: 'media/paneles-solares.mp4',              desc: 'Introducción al autoconsumo fotovoltaico colectivo y cómo funciona en una comunidad de vecinos.' },
-        { titulo: 'Análisis técnico solar',         src: 'media/analisis-tecnico-solar.mp4',       desc: 'Detalle técnico de la instalación: potencia, rendimiento, inversores y sistema de lastre.' },
+        { titulo: 'Descifrando la garantía',  src: 'media/descifrando_la_garantia.mp4',   desc: 'Análisis de la cláusula de garantía del contrato de impermeabilización y por qué el sistema de lastre no la invalida.' },
+        { titulo: 'Análisis técnico solar',   src: 'media/analisis-tecnico-solar.mp4',     desc: 'Detalle técnico de la instalación: potencia, rendimiento, inversores y sistema de lastre.' },
       ],
       pasos: [
         { icono: 'bi bi-check-circle-fill text-success', texto: 'Consulta vecinal realizada: 50 a favor de 79 consultados' },

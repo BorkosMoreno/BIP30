@@ -50,6 +50,11 @@ export default {
             <i class="bi bi-calendar2-check-fill"></i> La junta
           </a>
         </router-link>
+        <router-link to="/videos" custom v-slot="{ isActive, navigate }">
+          <a @click="navigate(); cerrar()" :class="['nav-item', isActive ? 'active' : '']">
+            <i class="bi bi-play-circle-fill"></i> Vídeos
+          </a>
+        </router-link>
 
         <hr class="sidebar-divider" />
         <p class="sidebar-section">Estado del proyecto</p>

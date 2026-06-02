@@ -1,17 +1,16 @@
 import { createApp }    from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-const v = '?v=2'
-
 import AppHeader  from './components/AppHeader.js?v=3'
-import AppSidebar from './components/AppSidebar.js?v=3'
+import AppSidebar from './components/AppSidebar.js?v=4'
 import AppFooter  from './components/AppFooter.js?v=4'
 
-import Inicio     from './views/Inicio.js?v=5'
+import Inicio     from './views/Inicio.js?v=7'
 import Beneficios from './views/Beneficios.js'
 import Propuesta  from './views/Propuesta.js'
 import Documentos from './views/Documentos.js?v=7'
 import Contacto   from './views/Contacto.js?v=3'
+import Videos     from './views/Videos.js'
 
 // ── Router ────────────────────────────────────
 const router = createRouter({
@@ -22,6 +21,7 @@ const router = createRouter({
     { path: '/propuesta',   component: Propuesta  },
     { path: '/documentos',  component: Documentos },
     { path: '/contacto',    component: Contacto   },
+    { path: '/videos',      component: Videos     },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
   scrollBehavior: () => ({ top: 0 }),
