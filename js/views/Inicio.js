@@ -71,6 +71,26 @@ export default {
         </div>
       </div>
 
+      <!-- Documento destacado + acceso a docs -->
+      <div class="card-solar mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div class="d-flex align-items-center gap-3">
+          <i class="bi bi-file-earmark-pdf-fill text-danger" style="font-size:2rem;flex-shrink:0"></i>
+          <div>
+            <div class="fw-bold" style="color:var(--solar-primary)">Documento informativo para los vecinos · Alromar</div>
+            <div class="text-muted" style="font-size:.82rem">Informe técnico de Alromar sobre la instalación fotovoltaica en BIP30</div>
+          </div>
+        </div>
+        <div class="d-flex gap-2 flex-wrap">
+          <a href="https://drive.google.com/file/d/1mvh9u3N3c5FKkJCOily2h_G3ow1RKTXu/view"
+             target="_blank" class="btn btn-sm btn-success fw-bold">
+            <i class="bi bi-file-earmark-pdf me-1"></i>Abrir PDF
+          </a>
+          <router-link to="/documentos" class="btn btn-sm btn-outline-primary fw-bold">
+            <i class="bi bi-folder2-open me-1"></i>Ver todos los documentos
+          </router-link>
+        </div>
+      </div>
+
       <!-- Estado + Junta -->
       <div class="row g-3 mb-4">
         <div class="col-md-7">

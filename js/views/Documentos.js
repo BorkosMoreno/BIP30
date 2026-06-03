@@ -81,6 +81,7 @@ export default {
           emoji: '⚖️', titulo: 'Garantía cubierta · Acciones legales',
           docs: [
             { icono: 'bi-file-earmark-pdf-fill', color: '#7B1FA2', nombre: 'Informe jurídico · Solar y garantía',        desc: 'Informe legal sobre compatibilidad instalación solar con garantía', id: '1l_6l_lqalUnTQ_UhVDv_KZNk87-8uZyc' },
+            { icono: 'bi-file-earmark-pdf-fill', color: '#1976D2', nombre: 'Informe instalación · Alromar',               desc: 'Informe técnico de Alromar sobre la instalación fotovoltaica', id: '1mvh9u3N3c5FKkJCOily2h_G3ow1RKTXu' },
             { icono: 'bi-file-earmark-pdf-fill', color: '#7B1FA2', nombre: 'Contrato impermeabilización (2024)',          desc: 'Equipo Impe · Obra cubiertas · Cláusula de garantía 10 años',     privado: true },
             { icono: 'bi-file-earmark-pdf-fill', color: '#7B1FA2', nombre: 'Acta final de obra y recepción (feb 2025)',   desc: 'Firmada por ambas partes · Inicio garantía 10 años',               privado: true },
             { icono: 'bi-file-earmark-pdf-fill', color: '#7B1FA2', nombre: 'Burofax a Equipo Impe (may 2026)',            desc: 'Requerimiento formal de compatibilidad solar',                     privado: true },
