@@ -1,11 +1,12 @@
 // IDs privados cifrados con AES-256-GCM
 const _enc = [
-  'EmzrIetY0myHb5zk17CFgbb3CfZAPij4h9kjc9b0WLAv4fuOS5aX3XPiTRarxJWNEA==',
-  'EnLmRf4o1z63ccKn+7OJibbhLM5EQy/YhIt/TM7GRKs66vZ4sxNg/kKvgZ0l67wOYg==',
-  'ElPoIN595Ri2QunAzKW5vajiFM9mXint7pEtTuKeZLYUAhkB1DBO+H8EQhZ5ETt75Q==',
-  'EmSQTMEj0BKxRM+gzeujx7vED/JefSDD1LZ9d9focqET3YOkNjm2clZ2n0rbDMCrfg==',
-  'EmKeQflz7hKkWfLxxImMm5SHb8FeZV7J44Q+R+jJRL0s9jhrvv6+Qgc7i3Jj2u4djA==',
-  'Ehf/ctFiwBaKSuH6yZC4ya7SFfVZPD3Z4pQWTLnIcb86APXOLGPSyacbQn2ZYXzAXQ==',
+  'EmzrIetY0myHb5zk17CFgbb3CfZAPij4h9kjc9b0WLAv4fuOS5aX3XPiTRarxJWNEA==', // 301 Contrato impe
+  'Em7BdNRzsRWGadHXg+X9oLntK9plUiPkxLQaUbjiIoksWVTMRwbhwq+bjlJ3LHVLow==', // Acta Final Impe (feb 2025)
+  'EnLmRf4o1z63ccKn+7OJibbhLM5EQy/YhIt/TM7GRKs66vZ4sxNg/kKvgZ0l67wOYg==', // 321 correo impe abr
+  'ElPoIN595Ri2QunAzKW5vajiFM9mXint7pEtTuKeZLYUAhkB1DBO+H8EQhZ5ETt75Q==',  // 322 correo impe may
+  'EmSQTMEj0BKxRM+gzeujx7vED/JefSDD1LZ9d9focqET3YOkNjm2clZ2n0rbDMCrfg==', // 323 Burofax
+  'EmKeQflz7hKkWfLxxImMm5SHb8FeZV7J44Q+R+jJRL0s9jhrvv6+Qgc7i3Jj2u4djA==', // 341 correos admin
+  'Ehf/ctFiwBaKSuH6yZC4ya7SFfVZPD3Z4pQWTLnIcb86APXOLGPSyacbQn2ZYXzAXQ==', // 951 Acta 2024
 ]
 
 async function _deriveKey(password) {
@@ -154,8 +155,9 @@ export default {
         {
           titulo: 'Garantía de la Cubierta y Comunicaciones', emoji: '🏗️', color: '#E65100', punto: '3',
           docs: [
-            // 301 · Contrato
-            { nombre: 'Contrato impermeabilización (2024)', privado: true, id: '' },
+            // 301 · Contrato e Acta
+            { nombre: 'Contrato impermeabilización (2024)',              privado: true, id: '' },
+            { nombre: 'Acta Final de Obra y Recepción · Equipo Impe (feb 2025)', privado: true, id: '' },
 
             { divider: 'Correos' },
             { nombre: 'Correo a Equipo Impe (abr 2026)',             privado: true, id: '' },
