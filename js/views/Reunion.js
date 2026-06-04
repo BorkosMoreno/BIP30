@@ -88,7 +88,7 @@ export default {
           <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
             <h5 class="fw-bold mb-0" :style="'color:' + grupo.color">{{ grupo.emoji }} {{ grupo.titulo }}</h5>
             <span v-if="grupo.punto" class="badge text-white fw-bold" :style="'background:' + grupo.color">
-              Punto {{ grupo.punto }} del orden del día
+              Punto{{ grupo.punto.includes('y') ? 's' : '' }} {{ grupo.punto }} del orden del día
             </span>
           </div>
 
@@ -174,30 +174,24 @@ export default {
           ],
         },
         {
-          titulo: 'Autoconsumo particular de viviendas', emoji: '🏠', color: '#1565C0', punto: '6',
+          titulo: 'Presupuestos de instalación', emoji: '📊', color: '#7B1FA2', punto: '6 y 7',
           docs: [
-            { nombre: 'FAQ · Preguntas Frecuentes',      id: '1V2tdq0927iZSN61mhaEvBEGuU_dVKIYc' },
-            { divider: 'Presupuestos' },
-            { nombre: 'E4e · Propuesta 213,70 kWp',      id: '17Fcagp0aZ86yX0lydxnxNVSdf_vCFSiI' },
-            { nombre: 'CEC · Presupuesto 147,5 kWp',     id: '1R1YjxIBCcDifVYOfPvhgVM0Pjo2VJMrv'  },
-            { nombre: 'CEC · Presentación SolarEdge',    id: '1bpKQL_nJrhJPTXR6uoegGAXOH3wxstu1'  },
-            { nombre: 'Alromar · Presupuesto 130 kWp',   id: '1oX9HDHPaRg6A-hhz6EQ2chvcZZlA0x27'  },
-            { nombre: 'Alromar · Presupuesto 65 kWp',    id: '1wppTAq5WDMBKTIwTtVaHEMqoxMaqgLLU'  },
-            { nombre: 'Besana · Presupuesto 52,50 kWp',  id: '1DPlMXHRWGDM7swt2TI31FxHGTXX80AM7'  },
-            { nombre: 'Besana · Presupuesto 111,30 kWp', id: '1SbE4JNrRNgNbhRnMyisEpcvOL7KwFDu5'  },
-            { nombre: 'Besana · Presupuesto 213,68 kWp', id: '1qYM9abbKtP3h9O33_auLdMze839wnRw4'  },
-          ],
-        },
-        {
-          titulo: 'Paneles solares para zonas comunes', emoji: '🏢', color: '#2E7D32', punto: '7',
-          docs: [
-            { nombre: 'FAQ · Preguntas Frecuentes',      id: '1V2tdq0927iZSN61mhaEvBEGuU_dVKIYc' },
-            { divider: 'Presupuestos y simulaciones' },
-            { nombre: 'CEC · Presupuesto 267 kWp',       id: '12HhmtBfIG4Mv-yIA2qloyPPwOFLjvoBW'  },
-            { nombre: 'Alromar · Simulación 130 kWp',    id: '1cJK7ShWCpYwamUX3cRe1OB_lKuccL6r8'  },
-            { nombre: 'Alromar · Simulación 65 kWp',     id: '1KwlGp6lUVGeADWc0q7e5uUF6hMD8HdhM'  },
-            { nombre: 'Besana · Presupuesto 111,30 kWp', id: '1SbE4JNrRNgNbhRnMyisEpcvOL7KwFDu5'  },
-            { nombre: 'Besana · Presupuesto 213,68 kWp', id: '1qYM9abbKtP3h9O33_auLdMze839wnRw4'  },
+            { nombre: 'FAQ · Preguntas Frecuentes',           id: '1V2tdq0927iZSN61mhaEvBEGuU_dVKIYc' },
+            { divider: 'E4e' },
+            { nombre: 'E4e · Propuesta 213,70 kWp',           id: '17Fcagp0aZ86yX0lydxnxNVSdf_vCFSiI' },
+            { divider: 'CEC' },
+            { nombre: 'CEC · Presupuesto 147,5 kWp',          id: '1R1YjxIBCcDifVYOfPvhgVM0Pjo2VJMrv' },
+            { nombre: 'CEC · Presupuesto 267 kWp',            id: '12HhmtBfIG4Mv-yIA2qloyPPwOFLjvoBW' },
+            { nombre: 'CEC · Presentación SolarEdge',         id: '1bpKQL_nJrhJPTXR6uoegGAXOH3wxstu1' },
+            { divider: 'Alromar' },
+            { nombre: 'Alromar · Presupuesto 130 kWp',        id: '1oX9HDHPaRg6A-hhz6EQ2chvcZZlA0x27' },
+            { nombre: 'Alromar · Simulación 130 kWp',         id: '1cJK7ShWCpYwamUX3cRe1OB_lKuccL6r8' },
+            { nombre: 'Alromar · Presupuesto 65 kWp',         id: '1wppTAq5WDMBKTIwTtVaHEMqoxMaqgLLU' },
+            { nombre: 'Alromar · Simulación 65 kWp',          id: '1KwlGp6lUVGeADWc0q7e5uUF6hMD8HdhM' },
+            { divider: 'Besana' },
+            { nombre: 'Besana · Presupuesto 52,50 kWp',       id: '1DPlMXHRWGDM7swt2TI31FxHGTXX80AM7' },
+            { nombre: 'Besana · Presupuesto 111,30 kWp',      id: '1SbE4JNrRNgNbhRnMyisEpcvOL7KwFDu5' },
+            { nombre: 'Besana · Presupuesto 213,68 kWp',      id: '1qYM9abbKtP3h9O33_auLdMze839wnRw4' },
           ],
         },
         {

@@ -5,7 +5,7 @@ import AppHeader  from './components/AppHeader.js?v=3'
 import AppSidebar from './components/AppSidebar.js?v=5'
 import AppFooter  from './components/AppFooter.js?v=4'
 
-import Reunion    from './views/Reunion.js?v=9'
+import Reunion    from './views/Reunion.js?v=10'
 import Inicio     from './views/Inicio.js?v=10'
 import Beneficios from './views/Beneficios.js'
 import Propuesta  from './views/Propuesta.js'
