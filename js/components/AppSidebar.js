@@ -27,7 +27,12 @@ export default {
 
         <router-link to="/" custom v-slot="{ isActive, navigate }">
           <a @click="navigate(); cerrar()" :class="['nav-item', isActive ? 'active' : '']">
-            <i class="bi bi-house-fill"></i> Inicio
+            <i class="bi bi-calendar-event-fill" style="color:var(--solar-secondary)"></i> <strong>Junta 4 Jun</strong>
+          </a>
+        </router-link>
+        <router-link to="/proyecto" custom v-slot="{ isActive, navigate }">
+          <a @click="navigate(); cerrar()" :class="['nav-item', isActive ? 'active' : '']">
+            <i class="bi bi-house-fill"></i> El proyecto
           </a>
         </router-link>
         <router-link to="/beneficios" custom v-slot="{ isActive, navigate }">
