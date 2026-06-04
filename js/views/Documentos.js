@@ -34,7 +34,7 @@ export default {
                   🔒 Privado
                 </span>
                 <a v-else
-                   :href="'https://drive.google.com/file/d/' + doc.id + '/view'"
+                   :href="doc.url || 'https://drive.google.com/file/d/' + doc.id + '/view'"
                    target="_blank"
                    class="btn btn-sm btn-success ms-1"
                    style="border-radius:8px;font-size:.73rem;white-space:nowrap">
@@ -93,8 +93,9 @@ export default {
         {
           emoji: '📰', titulo: 'Información y prensa',
           docs: [
-            { icono: 'bi-file-earmark-pdf-fill', color: '#388E3C', nombre: 'Sobre autoconsumo solar y bulos',  desc: 'Artículo sobre desinformación en energía solar (may 2026)', id: '1iUtfeyOQudTqaO4ktypyFEo1VbG3PH2w' },
-            { icono: 'bi-file-earmark-pdf-fill', color: '#388E3C', nombre: 'El País · Autoconsumo colectivo', desc: '"La unión hace la fuerza energética en las comunidades de vecinos"', id: '1h9aVDe8NAy9Z83NZ6Zb3KTL3Lr-K4KPh' },
+            { icono: 'bi-file-earmark-pdf-fill', color: '#c62828', nombre: 'BOAM · Plan Rehabilita 2026 · Ayto. Madrid', desc: 'Boletín Oficial del Ayuntamiento de Madrid (pág. 24) · Apertura plazo subvenciones Plan Rehabilita 2026', url: 'https://sede.madrid.es/csvfiles/UnidadesDescentralizadas/UDCBOAM/Contenidos/Boletin/2026/Junio/Ficheros%20PDF/BOAM_10138_01062026133552712.pdf' },
+            { icono: 'bi-file-earmark-pdf-fill', color: '#388E3C', nombre: 'Sobre autoconsumo solar y bulos',             desc: 'Artículo sobre desinformación en energía solar (may 2026)', id: '1iUtfeyOQudTqaO4ktypyFEo1VbG3PH2w' },
+            { icono: 'bi-file-earmark-pdf-fill', color: '#388E3C', nombre: 'El País · Autoconsumo colectivo',             desc: '"La unión hace la fuerza energética en las comunidades de vecinos"', id: '1h9aVDe8NAy9Z83NZ6Zb3KTL3Lr-K4KPh' },
           ],
         },
       ],

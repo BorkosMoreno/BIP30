@@ -71,7 +71,7 @@ export default {
         </div>
       </div>
 
-      <!-- Documento destacado + acceso a docs -->
+      <!-- Documentos destacados + acceso a docs -->
       <div class="card-solar mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
         <div class="d-flex align-items-center gap-3">
           <i class="bi bi-file-earmark-pdf-fill text-danger" style="font-size:2rem;flex-shrink:0"></i>
@@ -89,6 +89,20 @@ export default {
             <i class="bi bi-folder2-open me-1"></i>Ver todos los documentos
           </router-link>
         </div>
+      </div>
+
+      <div class="card-solar mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div class="d-flex align-items-center gap-3">
+          <i class="bi bi-bank text-danger" style="font-size:2rem;flex-shrink:0"></i>
+          <div>
+            <div class="fw-bold" style="color:var(--solar-primary)">BOAM · Plan Rehabilita 2026 · Ayuntamiento de Madrid</div>
+            <div class="text-muted" style="font-size:.82rem">Boletín Oficial (pág. 24) · Apertura del plazo para solicitar subvenciones Plan Rehabilita 2026</div>
+          </div>
+        </div>
+        <a href="https://sede.madrid.es/csvfiles/UnidadesDescentralizadas/UDCBOAM/Contenidos/Boletin/2026/Junio/Ficheros%20PDF/BOAM_10138_01062026133552712.pdf"
+           target="_blank" class="btn btn-sm btn-success fw-bold">
+          <i class="bi bi-file-earmark-pdf me-1"></i>Abrir PDF
+        </a>
       </div>
 
       <!-- Estado + Junta -->
