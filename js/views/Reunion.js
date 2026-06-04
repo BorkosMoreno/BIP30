@@ -1,11 +1,11 @@
 // IDs privados cifrados con AES-256-GCM
 const _enc = [
-  'EmzrIetY0myHb5zk17CFgbb3CfZAPij4h9kjc9b0WLAv4fuOS5aX3XPiTRarxJWNEA==', // 301 Contrato impe
-  'EnLmRf4o1z63ccKn+7OJibbhLM5EQy/YhIt/TM7GRKs66vZ4sxNg/kKvgZ0l67wOYg==', // 321 correo impe abr
-  'ElPoIN595Ri2QunAzKW5vajiFM9mXint7pEtTuKeZLYUAhkB1DBO+H8EQhZ5ETt75Q==',  // 322 correo impe may
-  'EmSQTMEj0BKxRM+gzeujx7vED/JefSDD1LZ9d9focqET3YOkNjm2clZ2n0rbDMCrfg==', // 323 Burofax
-  'EmKeQflz7hKkWfLxxImMm5SHb8FeZV7J44Q+R+jJRL0s9jhrvv6+Qgc7i3Jj2u4djA==', // 341 correos admin
-  'Ehf/ctFiwBaKSuH6yZC4ya7SFfVZPD3Z4pQWTLnIcb86APXOLGPSyacbQn2ZYXzAXQ==', // 951 Acta firmada
+  'EmzrIetY0myHb5zk17CFgbb3CfZAPij4h9kjc9b0WLAv4fuOS5aX3XPiTRarxJWNEA==',
+  'EnLmRf4o1z63ccKn+7OJibbhLM5EQy/YhIt/TM7GRKs66vZ4sxNg/kKvgZ0l67wOYg==',
+  'ElPoIN595Ri2QunAzKW5vajiFM9mXint7pEtTuKeZLYUAhkB1DBO+H8EQhZ5ETt75Q==',
+  'EmSQTMEj0BKxRM+gzeujx7vED/JefSDD1LZ9d9focqET3YOkNjm2clZ2n0rbDMCrfg==',
+  'EmKeQflz7hKkWfLxxImMm5SHb8FeZV7J44Q+R+jJRL0s9jhrvv6+Qgc7i3Jj2u4djA==',
+  'Ehf/ctFiwBaKSuH6yZC4ya7SFfVZPD3Z4pQWTLnIcb86APXOLGPSyacbQn2ZYXzAXQ==',
 ]
 
 async function _deriveKey(password) {
@@ -71,7 +71,7 @@ export default {
         </div>
       </div>
 
-      <!-- Subtítulo -->
+      <!-- Subtítulo + desbloquear -->
       <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
         <h2 class="section-title mb-0"><i class="bi bi-folder2-open"></i>Documentos de la reunión</h2>
         <button v-if="!desbloqueado" @click="mostrarModal=true" class="btn btn-sm btn-outline-secondary">
@@ -80,31 +80,51 @@ export default {
         <span v-else class="badge bg-success text-white"><i class="bi bi-unlock-fill me-1"></i>Desbloqueado</span>
       </div>
 
-      <!-- Grupos de documentos -->
+      <!-- Grupos -->
       <div class="d-flex flex-column gap-3">
         <div v-for="grupo in grupos" :key="grupo.titulo" class="card-solar" :style="'border-left:4px solid ' + grupo.color">
-          <h5 class="fw-bold mb-3" :style="'color:' + grupo.color">
-            {{ grupo.emoji }} {{ grupo.titulo }}
-          </h5>
+
+          <!-- Cabecera del grupo -->
+          <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+            <h5 class="fw-bold mb-0" :style="'color:' + grupo.color">{{ grupo.emoji }} {{ grupo.titulo }}</h5>
+            <span v-if="grupo.punto" class="badge text-white fw-bold" :style="'background:' + grupo.color">
+              Punto {{ grupo.punto }} del orden del día
+            </span>
+          </div>
+
+          <!-- Documentos con posibles divisores -->
           <div class="d-flex flex-column gap-2">
-            <div v-for="doc in grupo.docs" :key="doc.nombre"
-                 class="d-flex align-items-center justify-content-between p-2 rounded" style="background:#F8F9FA">
-              <div class="d-flex align-items-center gap-2" style="min-width:0">
-                <i class="bi bi-file-earmark-pdf-fill flex-shrink-0" :style="'color:' + grupo.color"></i>
-                <span style="font-size:.83rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ doc.nombre }}</span>
+            <template v-for="doc in grupo.docs" :key="doc.nombre || doc.divider">
+
+              <!-- Divisor con etiqueta -->
+              <div v-if="doc.divider"
+                   class="d-flex align-items-center gap-2 my-1">
+                <hr style="flex:1;margin:0;border-color:#ddd" />
+                <span style="font-size:.72rem;color:#999;white-space:nowrap;font-weight:600;text-transform:uppercase;letter-spacing:.06em">{{ doc.divider }}</span>
+                <hr style="flex:1;margin:0;border-color:#ddd" />
               </div>
-              <span v-if="doc.privado && !desbloqueado"
-                    class="badge-tag bg-secondary text-white ms-1 flex-shrink-0"
-                    style="cursor:pointer;white-space:nowrap" @click="mostrarModal=true">
-                🔒 Privado
-              </span>
-              <a v-else
-                 :href="doc.url || 'https://drive.google.com/file/d/' + doc.id + '/view'"
-                 target="_blank" class="btn btn-sm btn-success ms-1 flex-shrink-0"
-                 style="border-radius:8px;font-size:.72rem;white-space:nowrap">
-                <i class="bi bi-file-earmark-pdf me-1"></i>PDF
-              </a>
-            </div>
+
+              <!-- Documento normal -->
+              <div v-else
+                   class="d-flex align-items-center justify-content-between p-2 rounded" style="background:#F8F9FA">
+                <div class="d-flex align-items-center gap-2" style="min-width:0">
+                  <i class="bi bi-file-earmark-pdf-fill flex-shrink-0" :style="'color:' + grupo.color"></i>
+                  <span style="font-size:.83rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ doc.nombre }}</span>
+                </div>
+                <span v-if="doc.privado && !desbloqueado"
+                      class="badge-tag bg-secondary text-white ms-1 flex-shrink-0"
+                      style="cursor:pointer;white-space:nowrap" @click="mostrarModal=true">
+                  🔒 Privado
+                </span>
+                <a v-else
+                   :href="doc.url || 'https://drive.google.com/file/d/' + doc.id + '/view'"
+                   target="_blank" class="btn btn-sm btn-success ms-1 flex-shrink-0"
+                   style="border-radius:8px;font-size:.72rem;white-space:nowrap">
+                  <i :class="doc.web ? 'bi bi-box-arrow-up-right' : 'bi bi-file-earmark-pdf'" class="me-1"></i>{{ doc.web ? 'Ver' : 'PDF' }}
+                </a>
+              </div>
+
+            </template>
           </div>
         </div>
       </div>
@@ -127,59 +147,73 @@ export default {
         {
           titulo: 'Documentos de la Junta', emoji: '📋', color: '#1565C0',
           docs: [
-            { nombre: 'Convocatoria Ordinaria 4 junio 2026',       id: '1qkoURuAgC9mFbIkSITM6SiXRbkfyzL_1' },
-            { nombre: 'Ley de Propiedad Horizontal 2025 (LPH)',    id: '1BpRzF5Sp1Rm--xvZdowHxdTQFDXVnyNV' },
+            { nombre: 'Convocatoria Ordinaria 4 junio 2026',    id: '1qkoURuAgC9mFbIkSITM6SiXRbkfyzL_1' },
+            { nombre: 'Ley de Propiedad Horizontal 2025 (LPH)', id: '1BpRzF5Sp1Rm--xvZdowHxdTQFDXVnyNV' },
           ],
         },
         {
-          titulo: 'Garantía Cubierta y Comunicaciones', emoji: '🏗️', color: '#E65100',
+          titulo: 'Garantía de la Cubierta y Comunicaciones', emoji: '🏗️', color: '#E65100', punto: '3',
           docs: [
-            { nombre: 'Contrato impermeabilización (2024)',                       privado: true, id: '' },
-            { nombre: 'Correo a Equipo Impe (abr 2026)',                          privado: true, id: '' },
-            { nombre: 'Correo a Equipo Impe (may 2026)',                          privado: true, id: '' },
-            { nombre: 'Burofax a Equipo Impe (may 2026)',                         privado: true, id: '' },
-            { nombre: 'Correos pidiendo más datos al administrador',              privado: true, id: '' },
-            { nombre: 'Informe de instalación · Alromar',                        id: '15n7fhqBK23mTpsDL1bWgx1BFEDifpHC4' },
-            { nombre: 'Informe técnico y jurídico · Ingeniero',                  id: '1p4m0jERGGkE6LNP-Z3fLNvqVQ8bbOzzP' },
-            { nombre: 'Informe jurídico · Instalación paneles y garantía',       id: '1dkt2FB-64KGKw1xOuDzEOxNjaO4BTNhe' },
-            { nombre: 'Pseudoconvocatoria (may 2026)',                            id: '1ZdKU01nN55Yl_nBenBLZs1D7VfU5yjtd' },
-            { nombre: 'Sobre el autoconsumo solar, los bulos y la información',  id: '1mzGa8zbIKS11W7xnntF0wIzcI70z3PUI' },
+            // 301 · Contrato
+            { nombre: 'Contrato impermeabilización (2024)', privado: true, id: '' },
+
+            { divider: 'Correos' },
+            { nombre: 'Correo a Equipo Impe (abr 2026)',             privado: true, id: '' },
+            { nombre: 'Correo a Equipo Impe (may 2026)',             privado: true, id: '' },
+            { nombre: 'Burofax a Equipo Impe (may 2026)',            privado: true, id: '' },
+            { nombre: 'Correos pidiendo más datos al administrador', privado: true, id: '' },
+
+            { divider: 'Informes' },
+            { nombre: 'Informe de instalación · Alromar',                       id: '15n7fhqBK23mTpsDL1bWgx1BFEDifpHC4' },
+            { nombre: 'Informe técnico y jurídico · Ingeniero',                 id: '1p4m0jERGGkE6LNP-Z3fLNvqVQ8bbOzzP' },
+            { nombre: 'Informe jurídico · Instalación paneles y garantía',      id: '1dkt2FB-64KGKw1xOuDzEOxNjaO4BTNhe' },
+
+            { divider: 'Otros' },
+            { nombre: 'Pseudoconvocatoria (may 2026)',                           id: '1ZdKU01nN55Yl_nBenBLZs1D7VfU5yjtd' },
+            { nombre: 'Sobre el autoconsumo solar, los bulos y la información', id: '1mzGa8zbIKS11W7xnntF0wIzcI70z3PUI' },
           ],
         },
         {
-          titulo: 'FAQ y Documentos de la Comunidad', emoji: '❓', color: '#2E7D32',
+          titulo: 'Autoconsumo particular de viviendas', emoji: '🏠', color: '#1565C0', punto: '6',
           docs: [
-            { nombre: 'FAQ · Preguntas Frecuentes', id: '1V2tdq0927iZSN61mhaEvBEGuU_dVKIYc' },
+            { nombre: 'FAQ · Preguntas Frecuentes',      id: '1V2tdq0927iZSN61mhaEvBEGuU_dVKIYc' },
+            { divider: 'Presupuestos' },
+            { nombre: 'E4e · Propuesta 213,70 kWp',      id: '17Fcagp0aZ86yX0lydxnxNVSdf_vCFSiI' },
+            { nombre: 'CEC · Presupuesto 147,5 kWp',     id: '1R1YjxIBCcDifVYOfPvhgVM0Pjo2VJMrv'  },
+            { nombre: 'CEC · Presentación SolarEdge',    id: '1bpKQL_nJrhJPTXR6uoegGAXOH3wxstu1'  },
+            { nombre: 'Alromar · Presupuesto 130 kWp',   id: '1oX9HDHPaRg6A-hhz6EQ2chvcZZlA0x27'  },
+            { nombre: 'Alromar · Presupuesto 65 kWp',    id: '1wppTAq5WDMBKTIwTtVaHEMqoxMaqgLLU'  },
+            { nombre: 'Besana · Presupuesto 52,50 kWp',  id: '1DPlMXHRWGDM7swt2TI31FxHGTXX80AM7'  },
+            { nombre: 'Besana · Presupuesto 111,30 kWp', id: '1SbE4JNrRNgNbhRnMyisEpcvOL7KwFDu5'  },
+            { nombre: 'Besana · Presupuesto 213,68 kWp', id: '1qYM9abbKtP3h9O33_auLdMze839wnRw4'  },
           ],
         },
         {
-          titulo: 'Presupuestos de Instalación', emoji: '📊', color: '#7B1FA2',
+          titulo: 'Paneles solares para zonas comunes', emoji: '🏢', color: '#2E7D32', punto: '7',
           docs: [
-            { nombre: 'E4e · Propuesta 213,70 kWp',          id: '17Fcagp0aZ86yX0lydxnxNVSdf_vCFSiI' },
-            { nombre: 'CEC · Presupuesto 267 kWp',            id: '12HhmtBfIG4Mv-yIA2qloyPPwOFLjvoBW'  },
-            { nombre: 'CEC · Presupuesto 147,5 kWp',          id: '1R1YjxIBCcDifVYOfPvhgVM0Pjo2VJMrv'  },
-            { nombre: 'CEC · Presentación SolarEdge',         id: '1bpKQL_nJrhJPTXR6uoegGAXOH3wxstu1'  },
-            { nombre: 'Alromar · Presupuesto 130 kWp',        id: '1oX9HDHPaRg6A-hhz6EQ2chvcZZlA0x27'  },
-            { nombre: 'Alromar · Simulación 130 kWp',         id: '1cJK7ShWCpYwamUX3cRe1OB_lKuccL6r8'  },
-            { nombre: 'Alromar · Presupuesto 65 kWp',         id: '1wppTAq5WDMBKTIwTtVaHEMqoxMaqgLLU'  },
-            { nombre: 'Alromar · Simulación 65 kWp',          id: '1KwlGp6lUVGeADWc0q7e5uUF6hMD8HdhM'  },
-            { nombre: 'Besana · Presupuesto 52,50 kWp',       id: '1DPlMXHRWGDM7swt2TI31FxHGTXX80AM7'  },
-            { nombre: 'Besana · Presupuesto 111,30 kWp',      id: '1SbE4JNrRNgNbhRnMyisEpcvOL7KwFDu5'  },
-            { nombre: 'Besana · Presupuesto 213,68 kWp',      id: '1qYM9abbKtP3h9O33_auLdMze839wnRw4'  },
+            { nombre: 'FAQ · Preguntas Frecuentes',      id: '1V2tdq0927iZSN61mhaEvBEGuU_dVKIYc' },
+            { divider: 'Presupuestos y simulaciones' },
+            { nombre: 'CEC · Presupuesto 267 kWp',       id: '12HhmtBfIG4Mv-yIA2qloyPPwOFLjvoBW'  },
+            { nombre: 'Alromar · Simulación 130 kWp',    id: '1cJK7ShWCpYwamUX3cRe1OB_lKuccL6r8'  },
+            { nombre: 'Alromar · Simulación 65 kWp',     id: '1KwlGp6lUVGeADWc0q7e5uUF6hMD8HdhM'  },
+            { nombre: 'Besana · Presupuesto 111,30 kWp', id: '1SbE4JNrRNgNbhRnMyisEpcvOL7KwFDu5'  },
+            { nombre: 'Besana · Presupuesto 213,68 kWp', id: '1qYM9abbKtP3h9O33_auLdMze839wnRw4'  },
           ],
         },
         {
-          titulo: 'Actas Anteriores y Prensa', emoji: '📰', color: '#546E7A',
+          titulo: 'Actas y Documentos Anteriores', emoji: '📰', color: '#546E7A',
           docs: [
-            { nombre: 'Convocatoria Ordinaria 13 mayo 2024',         id: '1K4iluWxGUT1Ak9RuDL87_r1zFv5vsKMR' },
-            { nombre: 'Acta Ordinaria 13.05.2024 (firmada)',         privado: true, id: '' },
+            { nombre: 'Convocatoria Ordinaria 13 mayo 2024',    id: '1K4iluWxGUT1Ak9RuDL87_r1zFv5vsKMR' },
+            { nombre: 'Acta Ordinaria 13.05.2024 (firmada)',    privado: true, id: '' },
             { nombre: 'El País · La unión hace la fuerza energética', id: '1tuRuVTSkRkhbe4iPFjTdSj_u2miLZMYS' },
           ],
         },
         {
           titulo: 'Subvenciones y Ayudas', emoji: '💰', color: '#1B5E20',
           docs: [
-            { nombre: 'BOAM · Plan Rehabilita 2026 · Ayuntamiento de Madrid (pág. 24) · Apertura plazo subvenciones', url: 'https://sede.madrid.es/csvfiles/UnidadesDescentralizadas/UDCBOAM/Contenidos/Boletin/2026/Junio/Ficheros%20PDF/BOAM_10138_01062026133552712.pdf' },
+            { nombre: 'BOAM · Plan Rehabilita 2026 · Ayuntamiento de Madrid (pág. 24)', url: 'https://sede.madrid.es/csvfiles/UnidadesDescentralizadas/UDCBOAM/Contenidos/Boletin/2026/Junio/Ficheros%20PDF/BOAM_10138_01062026133552712.pdf' },
+            { nombre: 'Bonificación IBI · Instalación sistemas energía solar', web: true, url: 'https://agenciatributaria.madrid.es/portales/contribuyente/es/Impuestos-tasas-y-precios-publicos/Bienes-Inmuebles-IBI-/Exenciones-y-bonificaciones/Bonificacion-por-la-instalacion-de-sistemas-de-aprovechamiento-de-la-energia-solar-IBI-Informacion/?vgnextfmt=default&vgnextoid=d0ce35a0d1081810VgnVCM2000001f4a900aRCRD&vgnextchannel=82d5990d45a81810VgnVCM1000001d4a900aRCRD' },
+            { nombre: 'Deducción IRPF · Obras de rehabilitación energética', web: true, url: 'https://sede.agenciatributaria.gob.es/Sede/vivienda-otros-inmuebles/deducciones-obras-mejora-eficiencia-energetica-viviendas/deduccion-obras-rehabilitacion-energetica/que-periodo-impositivo-puedes-aplicar-deduccion.html' },
           ],
         },
       ],
