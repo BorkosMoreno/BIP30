@@ -177,6 +177,7 @@ export default {
           titulo: 'Presupuestos de instalación', emoji: '📊', color: '#7B1FA2', punto: '6 y 7',
           docs: [
             { nombre: 'FAQ · Preguntas Frecuentes',           id: '1V2tdq0927iZSN61mhaEvBEGuU_dVKIYc' },
+            { nombre: 'Cláusula del Miedo',                   id: '1-77Kx3-nebpXNKtv4d3dGy3JikUxtzOd' },
             { divider: 'E4e' },
             { nombre: 'E4e · Propuesta 213,70 kWp',           id: '17Fcagp0aZ86yX0lydxnxNVSdf_vCFSiI' },
             { divider: 'CEC' },
