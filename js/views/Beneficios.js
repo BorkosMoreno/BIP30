@@ -3,6 +3,7 @@ export default {
   template: `
     <div>
       <h2 class="section-title"><i class="bi bi-lightning-fill"></i>Beneficios del autoconsumo colectivo</h2>
+      <div class="detail-callout mb-3"><i class="bi bi-info-circle-fill"></i><p class="mb-0"><strong>Sobre las cifras:</strong> los porcentajes de ahorro, retornos e impactos que aparecen abajo proceden de escenarios y estudios anteriores. Son ilustrativos, no una previsión vigente de BIP30; se actualizarán con datos actuales y supuestos publicados.</p></div>
 
       <div class="row g-3 mb-4">
         <div class="col-md-3 col-6">

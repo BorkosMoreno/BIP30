@@ -4,8 +4,9 @@ export default {
     <div>
       <h2 class="section-title"><i class="bi bi-play-circle-fill"></i>Vídeos del proyecto</h2>
       <p class="text-muted mb-4" style="font-size:.9rem">
-        Colección completa de vídeos informativos sobre el proyecto solar de BIP30: análisis técnicos, aspectos jurídicos y divulgativos.
+        Archivo audiovisual de etapas anteriores del proyecto. Algunos vídeos tratan presupuestos y condiciones técnicas que pueden haber cambiado; estamos preparando materiales actualizados.
       </p>
+      <div class="detail-callout mb-3"><i class="bi bi-clock-history"></i><p class="mb-0"><strong>Contenido de archivo:</strong> consulta la documentación vigente antes de usar estos vídeos para valorar una propuesta actual.</p></div>
 
       <div class="row g-4">
         <div v-for="v in videos" :key="v.src" class="col-md-6">
