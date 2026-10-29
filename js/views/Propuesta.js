@@ -3,6 +3,7 @@ export default {
   template: `
     <div>
       <h2 class="section-title"><i class="bi bi-clipboard2-check-fill"></i>Propuestas de instalación</h2>
+      <div class="detail-callout mb-3"><i class="bi bi-clock-history"></i><p class="mb-0"><strong>Referencias de propuestas anteriores.</strong> Las empresas, precios, ahorros y ayudas que aparecen en esta página proceden de materiales previos y requieren confirmación antes de compararlos o tomar decisiones.</p></div>
 
       <!-- Tabs tipo proyecto -->
       <div class="d-flex gap-2 mb-4 flex-wrap">

@@ -1,0 +1,12 @@
+export default {
+  name: 'AutoconsumoIndividual',
+  template: `
+    <div>
+      <div class="detail-hero detail-hero-blue"><span class="eyebrow">PARTICIPACIÓN VOLUNTARIA</span><h1>Autoconsumo individual</h1><p>Una alternativa para estudiar cómo podrían participar las viviendas interesadas en una instalación fotovoltaica compartida.</p></div>
+      <div class="row g-3 mb-4"><div class="col-lg-7"><div class="card-solar h-100"><h2 class="section-title"><i class="bi bi-house-check-fill"></i>¿Cómo funcionaría?</h2><p>En un esquema de autoconsumo colectivo, una instalación cercana puede asignar parte de su producción a distintos consumidores mediante coeficientes de reparto. La energía asignada se valora según las reglas de autoconsumo y el contrato de cada vivienda.</p><p class="mb-0">La participación, el reparto, la compensación de excedentes y el ahorro dependen del diseño, los hábitos de consumo, la comercializadora y las condiciones económicas acordadas.</p></div></div>
+      <div class="col-lg-5"><div class="card-solar h-100"><h2 class="section-title"><i class="bi bi-list-check"></i>Antes de decidir</h2><ul class="check-list"><li>Confirmar quién quiere participar y con qué potencia.</li><li>Revisar propuesta, precio y forma de financiación.</li><li>Entender reparto horario y tratamiento de excedentes.</li><li>Verificar ayudas vigentes y requisitos de acceso.</li><li>Comparar garantías, mantenimiento y salida del acuerdo.</li></ul></div></div></div>
+      <div class="detail-callout"><i class="bi bi-exclamation-circle-fill"></i><p class="mb-0"><strong>Estimaciones anteriores:</strong> las cifras de ahorro, amortización e impuestos publicadas en documentos previos no son una garantía. Deben recalcularse con tarifas, normativa y ofertas vigentes.</p></div>
+      <div class="card-solar mt-4"><h2 class="section-title"><i class="bi bi-folder2-open"></i>Información para participantes</h2><p>La documentación debe permitir comparar escenarios y responder con claridad cuánto se invierte, qué producción se asigna, qué ahorro se estima y qué responsabilidades se asumen.</p><div class="d-flex flex-wrap gap-2"><router-link to="/propuesta" class="btn btn-primary">Consultar propuestas existentes</router-link><router-link to="/documentos" class="btn btn-outline-primary">Abrir documentos</router-link><router-link to="/juntas" class="btn btn-outline-secondary">Ver juntas y acuerdos</router-link></div></div>
+    </div>
+  `,
+}

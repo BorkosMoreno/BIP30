@@ -2,12 +2,15 @@ export default {
   name: 'Contacto',
   template: `
     <div>
-      <h2 class="section-title"><i class="bi bi-calendar2-check-fill"></i>La Junta · 4 de junio de 2026</h2>
+      <h2 class="section-title"><i class="bi bi-calendar2-check-fill"></i>Juntas y acuerdos</h2>
+
+      <div class="detail-callout mb-3"><i class="bi bi-archive-fill"></i><p class="mb-0"><strong>Convocatoria histórica · 4 de junio de 2026.</strong> La fecha ya ha pasado. Esta página conserva la información de aquella convocatoria y no anuncia una junta próxima. Añadiremos aquí futuras convocatorias y acuerdos cuando estén disponibles.</p></div>
+      <div class="home-warranty mb-4"><div class="warranty-icon"><i class="bi bi-shield-check"></i></div><div class="warranty-copy"><span class="eyebrow">ACLARACIÓN POSTERIOR A LA CONVOCATORIA</span><h2>La instalación solar no anula la garantía de 10 años de la cubierta</h2><p>En la última junta se aclaró que la instaladora responde por los desperfectos que cause y que la garantía sigue cubriendo las zonas no afectadas.</p></div><router-link to="/garantia-cubierta" class="btn btn-success">Leer explicación</router-link></div>
 
       <!-- Banner junta -->
       <div class="hero-banner mb-4">
-        <h1 style="font-size:1.5rem"><i class="bi bi-calendar-event-fill me-2" style="color:var(--solar-secondary)"></i>Junta General Ordinaria</h1>
-        <p class="mb-2">La propuesta solar está formalmente incluida en el orden del día. <strong>Tu asistencia o tu voto delegado son fundamentales.</strong></p>
+        <h1 style="font-size:1.5rem"><i class="bi bi-calendar-event-fill me-2" style="color:var(--solar-secondary)"></i>Convocatoria a Junta General Ordinaria · 4 de junio de 2026</h1>
+        <p class="mb-2">Esta convocatoria incluyó asuntos relacionados con el proyecto solar. La información se conserva como antecedente de la reunión.</p>
         <div class="d-flex gap-3 flex-wrap" style="font-size:.88rem">
           <span><i class="bi bi-clock-fill me-1" style="color:var(--solar-secondary)"></i>19:00h (1ª conv.) · 19:30h (2ª conv.)</span>
           <span><i class="bi bi-geo-alt-fill me-1" style="color:var(--solar-secondary)"></i>Patio comunidad · Portales I-H</span>
@@ -19,7 +22,7 @@ export default {
         <!-- Puntos del orden del día -->
         <div class="col-md-7">
           <div class="card-solar">
-            <h5 class="section-title"><i class="bi bi-list-ol"></i>Puntos del orden del día relevantes</h5>
+            <h5 class="section-title"><i class="bi bi-list-ol"></i>Puntos del orden del día incluidos en la convocatoria</h5>
 
             <!-- Punto 3 -->
             <div class="p-3 rounded-3 mb-3" style="background:linear-gradient(135deg,#FFF3E0,#FFE0B2)">
@@ -28,7 +31,7 @@ export default {
                       style="width:28px;height:28px;background:#E65100;font-size:.85rem">3</span>
                 <div>
                   <div class="fw-bold" style="color:#E65100">Informe resultado trabajos y condiciones garantía en obra cubierta</div>
-                  <div style="font-size:.83rem;color:#555;margin-top:.3rem">Se debatirá el estado de la obra de impermeabilización y las condiciones de garantía. <strong>Punto clave</strong>: se exigirá la presentación del contrato completo con Equipo Impe y la respuesta al burofax enviado, para que todos los vecinos conozcan la situación real de la garantía antes de votar los puntos solares.</div>
+                  <div style="font-size:.83rem;color:#555;margin-top:.3rem">La convocatoria proponía informar sobre la obra de impermeabilización y sus condiciones de garantía, así como solicitar documentación a Equipo Impe. Esta página no recoge el resultado de aquel punto.</div>
                   <div class="mt-2">
                     <span class="badge-tag bg-warning text-dark">Relacionado con el proyecto solar</span>
                   </div>
@@ -77,14 +80,14 @@ export default {
         <!-- Cómo participar -->
         <div class="col-md-5">
           <div class="card-solar h-100">
-            <h5 class="section-title"><i class="bi bi-person-check-fill"></i>¿Cómo participar?</h5>
+            <h5 class="section-title"><i class="bi bi-person-check-fill"></i>Información de participación de aquella convocatoria</h5>
 
             <div class="p-3 rounded-3 mb-3" style="background:#F0F7FF">
               <div class="d-flex align-items-start gap-3">
                 <span style="font-size:1.8rem">🏃</span>
                 <div>
-                  <div class="fw-bold">Asiste a la junta</div>
-                  <div style="font-size:.82rem;color:#555;margin-top:.2rem">La mejor forma de participar. Podrás votar y conocer de primera mano todos los detalles.</div>
+                  <div class="fw-bold">Asistencia presencial</div>
+                  <div style="font-size:.82rem;color:#555;margin-top:.2rem">La convocatoria indicaba asistencia presencial en el patio de la comunidad.</div>
                   <div class="mt-2 p-2 rounded" style="background:#1565C0;color:#fff;font-size:.8rem">
                     <strong>📅 4 de junio · 19:00h</strong><br/>Patio comunidad · Portales I-H
                   </div>
@@ -96,12 +99,12 @@ export default {
               <div class="d-flex align-items-start gap-3">
                 <span style="font-size:1.8rem">📝</span>
                 <div>
-                  <div class="fw-bold">¿No puedes asistir? Delega tu voto</div>
-                  <div style="font-size:.82rem;color:#555;margin-top:.2rem">Según el <strong>Art. 15.1 LPH</strong>, puedes autorizar a otro propietario para que te represente.</div>
+                  <div class="fw-bold">Delegación de voto</div>
+                  <div style="font-size:.82rem;color:#555;margin-top:.2rem">La convocatoria incluía este modelo orientativo de delegación, conforme al <strong>Art. 15.1 LPH</strong>.</div>
                   <div class="mt-2 p-2 rounded" style="background:rgba(0,0,0,.06);font-size:.78rem">
                     <strong>Modelo de delegación:</strong><br/>
-                    <em>"Don/Dña. [nombre], propietario/a del piso [X], autorizo a [nombre], propietario/a del piso [Y], para que me represente en la Junta del 4 de junio de 2026."</em><br/>
-                    <span style="color:#888;margin-top:.3rem;display:block">Firma, DNI y fecha. Entrégalo antes de la junta.</span>
+                    <em>"Don/Dña. [nombre], propietario/a del piso [X], autorizo a [nombre], propietario/a del piso [Y], para que me represente en la Junta del 4 de junio de 2026."<br/>Ejemplo conservado como antecedente; no reutilizar para futuras convocatorias.</em><br/>
+                    <span style="color:#888;margin-top:.3rem;display:block">Las futuras juntas requerirán su propia convocatoria y modelo vigente.</span>
                   </div>
                 </div>
               </div>
@@ -124,7 +127,7 @@ export default {
                 <div class="progress-bar" :class="r.color" :style="'width:' + r.pct + '%'"></div>
               </div>
             </div>
-            <div class="text-muted" style="font-size:.78rem">Consulta informal previa a 79 de 132 propietarios</div>
+            <div class="text-muted" style="font-size:.78rem">Consulta informal previa a 79 de 132 propietarios · dato histórico, no refleja la opinión actual</div>
           </div>
           <div class="col-md-4">
             <div class="text-center p-3 rounded-3 h-100" style="background:#E8F5E9">
@@ -138,7 +141,7 @@ export default {
               <div class="fw-bold mb-2" style="color:#E65100;font-size:.88rem">
                 <i class="bi bi-exclamation-triangle-fill me-1"></i>Tema a debatir: garantía cubierta
               </div>
-              <div style="font-size:.8rem;color:#555">El administrador alertó de posible pérdida de garantía. Los promotores enviaron un <strong>burofax a Equipo Impe</strong> argumentando que el sistema de lastre no perfora la membrana. <strong>Sin respuesta tras 45 días.</strong> Se exigirá el contrato completo en la junta.</div>
+              <div style="font-size:.8rem;color:#555">En la convocatoria se indicaba que se había consultado a Equipo Impe sobre la compatibilidad de la instalación con la cubierta. Esta página no refleja el estado actual de aquella consulta; debe comprobarse en la documentación posterior.</div>
             </div>
           </div>
         </div>
